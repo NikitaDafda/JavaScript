@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color:pink;
+            height:200px;
+            width:400px;
+        }
+
+        ul{
+            background-color:yellow;
+        }
+        li{
+            background-color:green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li> apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+</div>
+
+<script>
+
+let div=document.querySelector('div');
+let ul=document.querySelector('ul');
+let lis=document.querySelector('li');
+
+div.addEventListener('click',(event)=>{
+    event.stopPropagation();
+    console.log("div was clicked");
+})
+ul.addEventListener('click',(event)=>{
+    event.stopPropagation();
+    console.log("ul was clicked");
+})
+
+for (li of lis){
+li.addEventListener('click',(event)=>{
+    console.log("li was clicked");
+})
+}
+
+</script>
+</body>
+</html>
